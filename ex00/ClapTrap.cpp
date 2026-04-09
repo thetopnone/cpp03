@@ -95,7 +95,7 @@ void	ClapTrap::beRepaired(unsigned int amount){
 		}
 		else{
 			this->_hitPoints += amount;
-						std::cout << this << " has repaired " << amount << " hit points" << std::endl;
+			std::cout << this << " has repaired " << amount << " hit points" << std::endl;
 		}
 	}
 	if (_hitPoints == 0){
@@ -108,6 +108,17 @@ void	ClapTrap::beRepaired(unsigned int amount){
 
 std::string ClapTrap::getName( void ) const{
 	return (this->_name);
+}
+
+int	ClapTrap::getHitPoints ( void ) const{
+	return (this->_hitPoints);
+}
+
+int ClapTrap::getEnergyPoints( void ) const{
+	return (this->_energyPoints);
+}
+int ClapTrap::getAttackDamage( void ) const{
+	return (this->_attackDamage);
 }
 
 std::ostream &operator<<(std::ostream &out, ClapTrap const& ct){

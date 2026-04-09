@@ -33,6 +33,9 @@ class ClapTrap{
 		void beRepaired(unsigned int amount);
 
 		std::string getName( void ) const;
+		int	getHitPoints ( void ) const;
+		int getEnergyPoints( void ) const;
+		int getAttackDamage( void ) const;
 };
 
 std::ostream &operator<<(std::ostream &out, ClapTrap const& ct);
