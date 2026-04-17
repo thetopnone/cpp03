@@ -28,11 +28,12 @@ DiamondTrap::DiamondTrap( void )
 }
 
 DiamondTrap::DiamondTrap(std::string name)
-	:ClapTrap(name + "_clap_name")
+	:ClapTrap(name)
 	,ScavTrap(name)
 	,FragTrap(name)
 {
 	_name = name;
+	ClapTrap::_name += "_clap_name";
 	_hitPoints = FragTrap::_defaultHP;
 	_energyPoints = ScavTrap::_defaultEP;
 	_attackDamage = FragTrap::_defaultAD;
@@ -41,7 +42,11 @@ DiamondTrap::DiamondTrap(std::string name)
 	std::cout << "DiamondTrap Parametrized Constructor Called\n";
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const& other){
+DiamondTrap::DiamondTrap(DiamondTrap const& other)
+	:ClapTrap(other)
+	,ScavTrap(other)
+	,FragTrap(other)
+{
 	_name = other._name;
 	_hitPoints = other._hitPoints;
 	_energyPoints = other._energyPoints;
